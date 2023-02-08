@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brainybites.demo.dao.CusFeatureCountDao">
+
+    <insert id="initialCusFeature">
+        insert into CusFeatureCount (cfc_cus_id) value(#{cusId})
+    </insert>
+
+    <update id="updateCusFeature">
+        update CusFeatureCount
+        set ${column} = ${column} + #{num}
+        where cfc_cus_id = #{cusId}
+    </update>
+
+    <select id="countBehaviorNum" resultType="java.lang.Integer">
+        select
+            cfc_news_front_end + cfc_news_back_end + cfc_news_artificial_intelligence + cfc_news_deep_learning + cfc_news_data_mining + cfc_news_lang_learning +
+            cfc_news_embedded + cfc_news_cs_graphics + cfc_news_site_building
+        from CusFeatureCount
+        where cfc_cus_id = #{cusId}
+    </select>
+
+    <select id="getCusFeatureCountByCusId" resultType="com.brainybites.demo.bean.CusFeatureCount">
+        select *
+        from CusFeatureCount
+        where cfc_cus_id = #{cusId}
+    </select>
+
+    <select id="getCusArtTypesBehaviorNums" resultType="java.lang.Integer">
+        select
+            cfc_news_front_end + cfc_news_back_end + cfc_news_artificial_intelligence + cfc_news_deep_learning + cfc_news_data_mining + cfc_news_lang_learning +
+            cfc_news_embedded + cfc_news_cs_graphics + cfc_news_site_building
+        from CusFeatureCount
+        where cfc_cus_id = #{cusId}
+    </select>
+
+    <select id="getRelativeCusList" resultType="java.lang.Integer">
+        select
+            a.cfc_cus_id
+        from CusFeatureCount as a,
+             (select
+                  cfc_news_front_end + cfc_news_back_end + cfc_news_artificial_intelligence + cfc_news_deep_learning + cfc_news_data_mining + cfc_news_lang_learning +
+                  cfc_news_embedded + cfc_news_cs_graphics + cfc_news_site_building
+              from CusFeatureCount where cfc_cus_id = #{cusId}) as b
+        where a.cfc_cus_id != #{cusId}
+        order by
+            SQRT(
+                        POW((cast(a.cfc_news_front_end as signed) - cast(b.cfc_news_front_end as signed)), 2) +
+                        POW((cast(a.cfc_news_back_end as signed) - cast(b.cfc_news_back_end as signed)), 2) +
+                        POW((cast(a.cfc_news_artificial_intelligence as signed) - cast(b.cfc_news_artificial_intelligence as signed)), 2) +
+                        POW((cast(a.cfc_news_deep_learning as signed) - cast(b.cfc_news_deep_learning as signed)), 2) +
+                        POW((cast(a.cfc_news_data_mining as signed) - cast(b.cfc_news_data_mining as signed)), 2) +
+                        POW((cast(a.cfc_news_lang_learning as signed) - cast(b.cfc_news_lang_learning as signed)), 2) +
+
+                        POW((cast(a.cfc_news_embedded as signed) - cast(b.cfc_news_embedded as signed)), 2) +
+                        POW((cast(a.cfc_news_cs_graphics as signed) - cast(b.cfc_news_cs_graphics as signed)), 2) +
+                        POW((cast(a.cfc_news_site_building as signed) - cast(b.cfc_news_site_building as signed)), 2) +
+                )
+        limit #{num};
+    </select>
+
+</mapper>
