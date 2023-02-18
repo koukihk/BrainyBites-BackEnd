@@ -133,6 +133,6 @@ public interface ShapeService {
      * @param list
      * @return
      */
-    Boolean recordRecommendList(Integer cusId, List<ArtFullMod> list);
+    Boolean recordRecommendList(Integer cusId, List<ArtFullMod> list, String artType);
 
 }

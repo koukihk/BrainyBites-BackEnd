@@ -155,7 +155,7 @@ public class ShapeServiceImpl implements ShapeService {
     }
 
     @Override
-    public Boolean recordRecommendList(Integer cusId, List<ArtFullMod> list) {
+    public Boolean recordRecommendList(Integer cusId, List<ArtFullMod> list, String artType) {
         if (cusId == null || list == null || list.isEmpty()) {
             return null;
         }
@@ -163,8 +163,10 @@ public class ShapeServiceImpl implements ShapeService {
         for (ArtFullMod tar: list) {
             idList.add(tar.getArtId());
         }
-        cusRecommendRecordDao.deleteOldCommentList(cusId);
-        cusRecommendRecordDao.addRecommendList(cusId, idList);
+        if(!artType.equals("news_all")) {
+            cusRecommendRecordDao.deleteOldCommentList(cusId);
+            cusRecommendRecordDao.addRecommendList(cusId, idList);
+        }
         return null;
     }
 

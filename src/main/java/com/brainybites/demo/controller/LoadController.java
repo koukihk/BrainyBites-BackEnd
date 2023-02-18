@@ -70,7 +70,7 @@ public class LoadController {
         // 新用户推荐
         if (selfService.checkIsNewUser(customer.getCusId())) {
             recommendList = loadService.getTinyArtOnePageByTypeForNew(customer.getCusId(), artType, session.getPagThenAddOne(artType), pageSize);
-            shapeService.recordRecommendList(customer.getCusId(), recommendList);
+            shapeService.recordRecommendList(customer.getCusId(), recommendList, artType);
             return recommendList;
         }
 
@@ -89,7 +89,7 @@ public class LoadController {
         // 如果 getTinyArtOnePageByTypeForOld 方法返回内容长度为 0, 说明本批次相似用户推荐结束. 重新计算相似用户
         // getTinyArtOnePageByTypeForOld 方法返回内容长度为 0, 系统利用新一批相似用户再次尝试推荐
         if (recommendList.size() == 0) {
-            if ("recommend".equals(artType)) {
+            if ("news_recommend".equals(artType)) {
                 relativeCusList = selfService.getRelativeCusList(customer.getCusId(), 10);
                 session.setRelSession(relativeCusList);
                 session.getSetPagAfterCusChange(artType);
@@ -97,14 +97,14 @@ public class LoadController {
             }
             // 如果再次推荐的结果内容长度为 0, 切换至新用户推荐
             if (recommendList.size() == 0) {
-                if ("recommend".equals(artType)) {
+                if ("news_recommend".equals(artType)) {
                     session.setRelSession(new ArrayList<>());
                     session.getSetPagAfterCusChange(artType);
                 }
                 recommendList = loadService.getTinyArtOnePageByTypeForNew(customer.getCusId(), artType, session.getPagThenAddOne(artType), pageSize);
             }
         }
-        shapeService.recordRecommendList(customer.getCusId(), recommendList);
+        shapeService.recordRecommendList(customer.getCusId(), recommendList, artType);
         return recommendList;
     }
 
