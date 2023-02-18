@@ -44,10 +44,12 @@ public class LoadServiceImpl implements LoadService {
             Integer cusId, String artType, Integer page, Integer pageSize) {
         Integer start = PageHandler.calcuStartNO(page, pageSize);
         List<ArtFullMod> resultList = null;
-        if (artType.equals("news_global")) {
-            resultList = artDao.getTinyInfoArtFromGlobalForNew(cusId, start, 2);
-            resultList.addAll(artDao.getTinyHotArtFromGlobalForNew(cusId, start, pageSize-1-2));
-            resultList.addAll(artDao.getTinyNewArtFromGlobalForNew(cusId, start, 1));
+        if (artType.equals("news_recommend")) {
+            resultList = artDao.getTinyInfoArtFromRecommendForNew(cusId, start, 2);
+            resultList.addAll(artDao.getTinyHotArtFromRecommendForNew(cusId, start, pageSize-1-2));
+            resultList.addAll(artDao.getTinyNewArtFromRecommendForNew(cusId, start, 1));
+        } else if (artType.equals("news_all")) {
+            resultList = artDao.getTinyArtOnePageByTypeAll(cusId, start, pageSize);
         } else {
             resultList = artDao.getTinyNewArtByTypeForNew(artType, cusId, start, 1);
             resultList.addAll(artDao.getTinyArtOnePageByTypeNew(artType, cusId, start, pageSize-1));
@@ -71,10 +73,12 @@ public class LoadServiceImpl implements LoadService {
             }
         }
         List<ArtFullMod> resultList = null;
-        if (artType.equals("news_global")) {
-            resultList = artDao.getTinyHotArtFromGlobalForNew(cusId, start, 3);
-            resultList.addAll(artDao.getTinyArtOnePageFromGlobalOld(cusId, cusIdListStr, start, pageSize-1-3));
-            resultList.addAll(artDao.getTinyNewArtFromGlobalForOld(cusId, start, 1));
+        if (artType.equals("news_recommend")) {
+            resultList = artDao.getTinyHotArtFromRecommendForNew(cusId, start, 3);
+            resultList.addAll(artDao.getTinyArtOnePageFromRecommendOld(cusId, cusIdListStr, start, pageSize-1-3));
+            resultList.addAll(artDao.getTinyNewArtFromRecommendForOld(cusId, start, 1));
+        } else if (artType.equals("news_all")) {
+            resultList = artDao.getTinyArtOnePageByTypeAll(cusId, start, pageSize);
         } else {
             resultList = artDao.getTinyArtOnePageByTypeOld(artType, cusId, cusIdListStr, start, pageSize-1);
             resultList.addAll(artDao.getTinyNewArtByTypeForOld(artType, cusId, start, 1));
@@ -89,6 +93,7 @@ public class LoadServiceImpl implements LoadService {
             return resultList;
         }
     }
+
 
     @Override
     public List<ArtFullMod> getHotArtOnePage(Integer page, Integer pageSize) {

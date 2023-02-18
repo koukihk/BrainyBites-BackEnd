@@ -28,7 +28,7 @@ public interface ArtDao {
      * @return
      */
     @Deprecated
-    List<ArtFullMod> getTinyArtOnePageFromGlobalNew(Integer cusId, Integer start, Integer pageSize);
+    List<ArtFullMod> getTinyArtOnePageFromRecommendNew(Integer cusId, Integer start, Integer pageSize);
 
     /**
      * 按照类别获取一页文章缩略内容, 包括文章基本信息, 文章作者基本信息, 文章的特征统计信息
@@ -109,7 +109,7 @@ public interface ArtDao {
      * @param pageSize
      * @return
      */
-    List<ArtFullMod> getTinyArtOnePageFromGlobalOld
+    List<ArtFullMod> getTinyArtOnePageFromRecommendOld
             (Integer cusId, String cusIdListStr, Integer start, Integer pageSize);
 
     /**
@@ -134,6 +134,8 @@ public interface ArtDao {
      */
     Integer addArt(Article article);
 
+    List<ArtFullMod> getTinyArtOnePageByTypeAll(Integer cusId, Integer start, Integer pageSize);
+
     /**
      * 全局获取一页新(new)文章缩略内容, 包括文章基本信息, 文章作者基本信息, 文章的特征统计信息
      * 直接依据新闻的发布时间排序推荐.
@@ -143,7 +145,7 @@ public interface ArtDao {
      * @param pageSize
      * @return
      */
-    List<ArtFullMod> getTinyNewArtFromGlobalForNew(Integer cusId, Integer start, Integer pageSize);
+    List<ArtFullMod> getTinyNewArtFromRecommendForNew(Integer cusId, Integer start, Integer pageSize);
 
     /**
      * 全局获取一页核心(hot)文章缩略内容, 包括文章基本信息, 文章作者基本信息, 文章的特征统计信息
@@ -154,7 +156,8 @@ public interface ArtDao {
      * @param pageSize
      * @return
      */
-    List<ArtFullMod> getTinyHotArtFromGlobalForNew(Integer cusId, Integer start, Integer pageSize);
+    List<ArtFullMod> getTinyHotArtFromRecommendForNew(Integer cusId, Integer start, Integer pageSize);
+
 
     /**
      * 全局获取一页咨询类(info)文章缩略内容, 包括文章基本信息, 文章作者基本信息, 文章的特征统计信息
@@ -165,7 +168,7 @@ public interface ArtDao {
      * @param pageSize
      * @return
      */
-    List<ArtFullMod> getTinyInfoArtFromGlobalForNew(Integer cusId, Integer start, Integer pageSize);
+    List<ArtFullMod> getTinyInfoArtFromRecommendForNew(Integer cusId, Integer start, Integer pageSize);
 
     /**
      * 按照类别获取一页新(new)文章缩略内容, 包括文章基本信息, 文章作者基本信息, 文章的特征统计信息
@@ -180,14 +183,14 @@ public interface ArtDao {
     List<ArtFullMod> getTinyNewArtByTypeForNew(String artType, Integer cusId, Integer start, Integer pageSize);
 
     /**
-     * 此方法功能和 getTinyNewArtFromGlobalForNew 一致, 只是名字不同
+     * 此方法功能和 getTinyNewArtFromRecommendForNew 一致, 只是名字不同
      * 23-01-13 创建方法
      * @param cusId
      * @param start
      * @param pageSize
      * @return
      */
-    List<ArtFullMod> getTinyNewArtFromGlobalForOld(Integer cusId, Integer start, Integer pageSize);
+    List<ArtFullMod> getTinyNewArtFromRecommendForOld(Integer cusId, Integer start, Integer pageSize);
 
     /**
      * 此方法功能和 getTinyNewArtByTypeForNew 一致, 只是名字不同

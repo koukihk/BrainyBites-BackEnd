@@ -5,10 +5,8 @@
 
 <mapper namespace="com.brainybites.demo.dao.CusRecommendRecordDao">
 
-
     <insert id="addRecommendList">
-        INSERT INTO CusRecommendRecord(crr_cus_id, crr_art_id)
-        VALUES
+        INSERT INTO CusRecommendRecord(crr_cus_id, crr_art_id) VALUES
         <foreach collection="list" item="tar" separator=",">
             (#{cusId}, #{tar})
         </foreach>

@@ -17,8 +17,8 @@
 
     <select id="countBehaviorNum" resultType="java.lang.Integer">
         select
-            cfc_news_front_end + cfc_news_back_end + cfc_news_artificial_intelligence + cfc_news_deep_learning + cfc_news_data_mining + cfc_news_lang_learning +
-            cfc_news_embedded + cfc_news_cs_graphics + cfc_news_site_building
+            cfc_news_cope + cfc_news_apple + cfc_news_flash + cfc_news_review + cfc_news_tip + cfc_news_opinion + cfc_news_game +
+            cfc_news_application + cfc_news_company + cfc_news_geography + cfc_news_history + cfc_news_talk
         from CusFeatureCount
         where cfc_cus_id = #{cusId}
     </select>
@@ -31,8 +31,8 @@
 
     <select id="getCusArtTypesBehaviorNums" resultType="java.lang.Integer">
         select
-            cfc_news_front_end + cfc_news_back_end + cfc_news_artificial_intelligence + cfc_news_deep_learning + cfc_news_data_mining + cfc_news_lang_learning +
-            cfc_news_embedded + cfc_news_cs_graphics + cfc_news_site_building
+            cfc_news_cope + cfc_news_apple + cfc_news_flash + cfc_news_review + cfc_news_tip + cfc_news_opinion + cfc_news_game +
+            cfc_news_application + cfc_news_company + cfc_news_geography + cfc_news_history + cfc_news_talk
         from CusFeatureCount
         where cfc_cus_id = #{cusId}
     </select>
@@ -42,22 +42,25 @@
             a.cfc_cus_id
         from CusFeatureCount as a,
              (select
-                  cfc_news_front_end + cfc_news_back_end + cfc_news_artificial_intelligence + cfc_news_deep_learning + cfc_news_data_mining + cfc_news_lang_learning +
-                  cfc_news_embedded + cfc_news_cs_graphics + cfc_news_site_building
+                  cfc_news_cope + cfc_news_apple + cfc_news_flash + cfc_news_review + cfc_news_tip + cfc_news_opinion + cfc_news_game +
+                  cfc_news_application + cfc_news_company + cfc_news_geography + cfc_news_history + cfc_news_talk
               from CusFeatureCount where cfc_cus_id = #{cusId}) as b
         where a.cfc_cus_id != #{cusId}
         order by
             SQRT(
-                        POW((cast(a.cfc_news_front_end as signed) - cast(b.cfc_news_front_end as signed)), 2) +
-                        POW((cast(a.cfc_news_back_end as signed) - cast(b.cfc_news_back_end as signed)), 2) +
-                        POW((cast(a.cfc_news_artificial_intelligence as signed) - cast(b.cfc_news_artificial_intelligence as signed)), 2) +
-                        POW((cast(a.cfc_news_deep_learning as signed) - cast(b.cfc_news_deep_learning as signed)), 2) +
-                        POW((cast(a.cfc_news_data_mining as signed) - cast(b.cfc_news_data_mining as signed)), 2) +
-                        POW((cast(a.cfc_news_lang_learning as signed) - cast(b.cfc_news_lang_learning as signed)), 2) +
+                        POW((cast(a.cfc_news_cope as signed) - cast(b.cfc_news_apple as signed)), 2) +
+                        POW((cast(a.cfc_news_apple as signed) - cast(b.cfc_news_apple as signed)), 2) +
+                        POW((cast(a.cfc_news_flash as signed) - cast(b.cfc_news_flash as signed)), 2) +
+                        POW((cast(a.cfc_news_review as signed) - cast(b.cfc_news_review as signed)), 2) +
+                        POW((cast(a.cfc_news_tip as signed) - cast(b.cfc_news_tip as signed)), 2) +
+                        POW((cast(a.cfc_news_opinion as signed) - cast(b.cfc_news_opinion as signed)), 2) +
+                        POW((cast(a.cfc_news_game as signed) - cast(b.cfc_news_game as signed)), 2) +
 
-                        POW((cast(a.cfc_news_embedded as signed) - cast(b.cfc_news_embedded as signed)), 2) +
-                        POW((cast(a.cfc_news_cs_graphics as signed) - cast(b.cfc_news_cs_graphics as signed)), 2) +
-                        POW((cast(a.cfc_news_site_building as signed) - cast(b.cfc_news_site_building as signed)), 2) +
+                        POW((cast(a.cfc_news_application as signed) - cast(b.cfc_news_application as signed)), 2) +
+                        POW((cast(a.cfc_news_company as signed) - cast(b.cfc_news_company as signed)), 2) +
+                        POW((cast(a.cfc_news_geography as signed) - cast(b.cfc_news_geography as signed)), 2) +
+                        POW((cast(a.cfc_news_history as signed) - cast(b.cfc_news_history as signed)), 2) +
+                        POW((cast(a.cfc_news_talk as signed) - cast(b.cfc_news_talk as signed)), 2) +
                 )
         limit #{num};
     </select>

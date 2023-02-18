@@ -12,36 +12,30 @@ public class PageHandler {
 
     public static Map<String, Integer> initPageList() {
         Map<String, Integer> pages = new HashMap<>();
-        pages.put("news_global", 0);
+        pages.put("news_recommend", 0);
+        pages.put("news_all", 0);
         pages.put("news_hot", 0);
 
-        pages.put("news_society", 0);
-        pages.put("news_entertainment", 0);
-        pages.put("news_tech", 0);
-        pages.put("news_military", 0);
-        pages.put("news_sports", 0);
-        pages.put("news_car", 0);
-
-        pages.put("news_finance", 0);
-        pages.put("news_world", 0);
-        pages.put("news_fashion", 0);
-        pages.put("news_travel", 0);
-        pages.put("news_discovery", 0);
-        pages.put("news_baby", 0);
-
-        pages.put("news_regimen", 0);
-        pages.put("news_story", 0);
-        pages.put("news_essay", 0);
+        pages.put("news_cope", 0);
+        pages.put("news_apple", 0);
+        pages.put("news_flash", 0);
+        pages.put("news_review", 0);
+        pages.put("news_tip", 0);
+        pages.put("news_opinion", 0);
         pages.put("news_game", 0);
+
+        pages.put("news_application", 0);
+        pages.put("news_company", 0);
+        pages.put("news_geography", 0);
         pages.put("news_history", 0);
-        pages.put("news_food", 0);
+        pages.put("news_talk", 0);
 
         return pages;
     }
 
     //public static void hotArtPageCheck(Map<String, Integer> pages) {
-    //    if (pages.get("hot") > 4) {
-    //        pages.replace("hot", 0);
+    //    if (pages.get("news_hot") > 4) {
+    //        pages.replace("news_hot", 0);
     //    }
     //}
     //

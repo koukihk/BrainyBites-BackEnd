@@ -54,11 +54,14 @@ public class SessionServiceImpl implements SessionService {
             if (pag > 4) {
                 pages.replace("news_hot", 0);
             } else {
-                pages.replace("news_hot", pag+1);
+                pages.replace("news_hot", pag + 1);
             }
+        } else if(category.equals("news_all")) {
+            pag = pages.get(category);
+            pages.replace(category, pag + 1);
         } else {
             pag = pages.get(category);
-            pages.replace(category, pag+1);
+            pages.replace(category, pag + 1);
         }
         session.setAttribute(PAG, pages);
         return pag;

@@ -6,9 +6,9 @@ import java.util.Map;
 
 public class TypeHandler {
 
-    private static final String[] ch = {"推荐", "前端", "后端", "人工智能", "深度学习", "数据挖掘", "语言学习", "嵌入式","计算机图形学","网站建设"};
-    private static final String[] en = {"recommend", "front_end", "back_end", "artificial_intelligence", "deep_learning", "data_mining",
-            "lang_learning", "embedded", "cs_graphics", "site_building"};
+    private static final String[] ch = {"全部", "推荐", "科普", "Apple", "快讯", "评测", "技巧", "观点", "游戏", "应用", "公司", "地理", "历史", "杂谈"};
+    private static final String[] en = {"news_all", "news_recommend", "news_cope", "news_apple", "news_flash", "news_review", "news_tip", "news_opinion",
+            "news_game", "news_application", "news_company", "news_geography", "news_history", "news_talk"};
 
     //public static List<String> sortTypeEn(List<Integer> nums) {
     //    Map<String, Integer> dictionary = new HashMap<>();
@@ -31,6 +31,7 @@ public class TypeHandler {
             }
         }
         enTypes.add(0, "推荐");
+        enTypes.add(1, "全部");
         return enTypes;
     }
 
@@ -48,7 +49,7 @@ public class TypeHandler {
                 }
             }
         }
-        chTypes.add(0, "recommend");
+        chTypes.add(0, "news_recommend");
         return chTypes;
     }
     

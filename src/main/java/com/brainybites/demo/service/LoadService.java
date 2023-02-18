@@ -54,6 +54,7 @@ public interface LoadService {
     List<ArtFullMod> getTinyArtOnePageByTypeForOld(
             Integer cusId, List<Integer> cusList, String artType, Integer page, Integer pageSize);
 
+
     /**
      * 提供一页的热点新闻的缩略信息
      * 22-12-19 创建方法

@@ -4,17 +4,20 @@ public class CusFeatureCount {
     private Integer cfcId;
     private Integer cfcCusId;
 
-    private Integer cfcNewsFrontEnd;
-    private Integer cfcNewsBackEnd;
-    private Integer cfcNewsArtificialIntelligence;
+    private Integer cfcNewsCope;
+    private Integer cfcNewsApple;
+    private Integer cfcNewsFlash;
+    private Integer cfcNewsReview;
 
-    private Integer cfcNewsDeepLearning;
-    private Integer cfcNewsDataMining;
-    private Integer cfcNewsLangLearning;
+    private Integer cfcNewsTip;
+    private Integer cfcNewsOpinion;
+    private Integer cfcNewsGame;
 
-    private Integer cfcNewsEmbedded;
-    private Integer cfcNewsCsGraphics;
-    private Integer cfcNewsSiteBuilding;
+    private Integer cfcNewsApplication;
+    private Integer cfcNewsCompany;
+    private Integer cfcNewsGeography;
+    private Integer cfcNewsHistory;
+    private Integer cfcNewsTalk;
 
     public Integer getCfcId() {
         return cfcId;
@@ -31,77 +34,86 @@ public class CusFeatureCount {
     public void setCfcCusId(Integer cfcCusId) {
         this.cfcCusId = cfcCusId;
     }
-
-    public Integer getCfcNewsFrontEnd() {
-        return cfcNewsFrontEnd;
+    public Integer getCfcNewsCope() { return cfcNewsCope; }
+    public void setCfcNewsCope(Integer cfcNewsCope) { this.cfcNewsCope = cfcNewsCope; }
+    public Integer getCfcNewsApple() {
+        return cfcNewsApple;
     }
 
-    public void setCfcNewsFrontEnd(Integer cfcNewsFrontEnd) {
-        this.cfcNewsFrontEnd = cfcNewsFrontEnd;
+    public void setCfcNewsApple(Integer cfcNewsApple) {
+        this.cfcNewsApple = cfcNewsApple;
     }
 
-    public Integer getCfcNewsBackEnd() {
-        return cfcNewsBackEnd;
+    public Integer getCfcNewsFlash() {
+        return cfcNewsFlash;
     }
 
-    public void setCfcNewsBackEnd(Integer cfcNewsBackEnd) {
-        this.cfcNewsBackEnd = cfcNewsBackEnd;
+    public void setCfcNewsFlash(Integer cfcNewsFlash) {
+        this.cfcNewsFlash = cfcNewsFlash;
     }
 
-    public Integer getCfcNewsArtificialIntelligence() {
-        return cfcNewsArtificialIntelligence;
+    public Integer getCfcNewsReview() {
+        return cfcNewsReview;
     }
 
-    public void setCfcNewsArtificialIntelligence(Integer cfcNewsArtificialIntelligence) {
-        this.cfcNewsArtificialIntelligence = cfcNewsArtificialIntelligence;
+    public void setCfcNewsReview(Integer cfcNewsReview) {
+        this.cfcNewsReview = cfcNewsReview;
     }
 
-    public Integer getCfcNewsDeepLearning() {
-        return cfcNewsDeepLearning;
+    public Integer getCfcNewsTip() {
+        return cfcNewsTip;
     }
 
-    public void setCfcNewsDeepLearning(Integer cfcNewsDeepLearning) {
-        this.cfcNewsDeepLearning = cfcNewsDeepLearning;
+    public void setCfcNewsTip(Integer cfcNewsTip) {
+        this.cfcNewsTip = cfcNewsTip;
     }
 
-    public Integer getCfcNewsDataMining() {
-        return cfcNewsDataMining;
+    public Integer getCfcNewsOpinion() {
+        return cfcNewsOpinion;
     }
 
-    public void setCfcNewsDataMining(Integer cfcNewsDataMining) {
-        this.cfcNewsDataMining = cfcNewsDataMining;
+    public void setCfcNewsOpinion(Integer cfcNewsOpinion) {
+        this.cfcNewsOpinion = cfcNewsOpinion;
     }
 
-    public Integer getCfcNewsLangLearning() {
-        return cfcNewsLangLearning;
+    public Integer getCfcNewsGame() {
+        return cfcNewsGame;
     }
 
-    public void setCfcNewsLangLearning(Integer cfcNewsLangLearning) {
-        this.cfcNewsLangLearning = cfcNewsLangLearning;
+    public void setCfcNewsGame(Integer cfcNewsGame) {
+        this.cfcNewsGame = cfcNewsGame;
     }
 
-    public Integer getCfcNewsEmbedded() {
-        return cfcNewsEmbedded;
+    public Integer getCfcNewsApplication() {
+        return cfcNewsApplication;
     }
 
-    public void setCfcNewsEmbedded(Integer cfcNewsEmbedded) {
-        this.cfcNewsEmbedded = cfcNewsEmbedded;
+    public void setCfcNewsApplication(Integer cfcNewsApplication) {
+        this.cfcNewsApplication = cfcNewsApplication;
     }
 
-    public Integer getCfcNewsCsGraphics() {
-        return cfcNewsCsGraphics;
+    public Integer getCfcNewsCompany() {
+        return cfcNewsCompany;
     }
 
-    public void setCfcNewsCsGraphics(Integer cfcNewsCsGraphics) {
-        this.cfcNewsCsGraphics = cfcNewsCsGraphics;
+    public void setCfcNewsCompany(Integer cfcNewsCompany) {
+        this.cfcNewsCompany = cfcNewsCompany;
     }
 
-    public Integer getCfcNewsSiteBuilding() {
-        return cfcNewsSiteBuilding;
+    public Integer getCfcNewsGeography() {
+        return cfcNewsGeography;
     }
 
-    public void setCfcNewsSiteBuilding(Integer cfcNewsSiteBuilding) {
-        this.cfcNewsSiteBuilding = cfcNewsSiteBuilding;
+    public void setCfcNewsGeography(Integer cfcNewsGeography) {
+        this.cfcNewsGeography = cfcNewsGeography;
     }
+
+    public Integer getCfcNewsHistory() { return cfcNewsHistory; }
+
+    public void setCfcNewsHistory(Integer cfcNewsHistory) { this.cfcNewsHistory = cfcNewsHistory; }
+
+    public Integer getCfcNewsTalk() { return cfcNewsTalk; }
+
+    public void setCfcNewsTalk(Integer cfcNewsTalk) { this.cfcNewsTalk = cfcNewsTalk; }
 
 }

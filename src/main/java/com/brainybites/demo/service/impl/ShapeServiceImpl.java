@@ -156,6 +156,9 @@ public class ShapeServiceImpl implements ShapeService {
 
     @Override
     public Boolean recordRecommendList(Integer cusId, List<ArtFullMod> list) {
+        if (cusId == null || list == null || list.isEmpty()) {
+            return null;
+        }
         List<Integer> idList = new ArrayList<>();
         for (ArtFullMod tar: list) {
             idList.add(tar.getArtId());
