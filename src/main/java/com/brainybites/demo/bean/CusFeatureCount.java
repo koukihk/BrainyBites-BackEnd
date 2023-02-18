@@ -18,6 +18,7 @@ public class CusFeatureCount {
     private Integer cfcNewsGeography;
     private Integer cfcNewsHistory;
     private Integer cfcNewsTalk;
+    private Integer cfcNewsQuestion;
 
     public Integer getCfcId() {
         return cfcId;
@@ -115,5 +116,9 @@ public class CusFeatureCount {
     public Integer getCfcNewsTalk() { return cfcNewsTalk; }
 
     public void setCfcNewsTalk(Integer cfcNewsTalk) { this.cfcNewsTalk = cfcNewsTalk; }
+
+    public Integer getCfcNewsQuestion() { return cfcNewsQuestion; }
+
+    public void setCfcNewsQuestion(Integer cfcNewsQuestion) { this.cfcNewsQuestion = cfcNewsQuestion; }
 
 }

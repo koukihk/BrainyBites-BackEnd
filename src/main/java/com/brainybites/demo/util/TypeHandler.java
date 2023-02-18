@@ -6,9 +6,9 @@ import java.util.Map;
 
 public class TypeHandler {
 
-    private static final String[] ch = {"全部", "推荐", "科普", "Apple", "快讯", "评测", "技巧", "观点", "游戏", "应用", "公司", "地理", "历史", "杂谈"};
+    private static final String[] ch = {"全部", "推荐", "科普", "Apple", "快讯", "评测", "技巧", "观点", "游戏", "应用", "公司", "地理", "历史", "杂谈", "爱问"};
     private static final String[] en = {"news_all", "news_recommend", "news_cope", "news_apple", "news_flash", "news_review", "news_tip", "news_opinion",
-            "news_game", "news_application", "news_company", "news_geography", "news_history", "news_talk"};
+            "news_game", "news_application", "news_company", "news_geography", "news_history", "news_talk", "news_question"};
 
     //public static List<String> sortTypeEn(List<Integer> nums) {
     //    Map<String, Integer> dictionary = new HashMap<>();

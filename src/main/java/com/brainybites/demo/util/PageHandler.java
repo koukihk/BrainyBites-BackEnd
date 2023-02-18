@@ -29,6 +29,7 @@ public class PageHandler {
         pages.put("news_geography", 0);
         pages.put("news_history", 0);
         pages.put("news_talk", 0);
+        pages.put("news_question", 0);
 
         return pages;
     }
