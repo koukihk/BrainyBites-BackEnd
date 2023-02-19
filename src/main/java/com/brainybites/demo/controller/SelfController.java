@@ -144,7 +144,7 @@ public class SelfController {
             return "不能关注自己";
         }
         if (selfService.setCusFollow(cusIdFrom, cusId)) {
-            shapeService.setCusBehaviorCusFollow(cusIdFrom, cusId);
+            // shapeService.setCusBehaviorCusFollow(cusIdFrom, cusId);
             return "关注成功";
         } else {
             return "关注失败";
