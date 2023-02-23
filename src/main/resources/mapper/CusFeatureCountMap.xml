@@ -18,7 +18,7 @@
     <select id="countBehaviorNum" resultType="java.lang.Integer">
         select
             cfc_news_cope + cfc_news_apple + cfc_news_flash + cfc_news_review + cfc_news_tip + cfc_news_opinion + cfc_news_game +
-            cfc_news_application + cfc_news_company + cfc_news_geography + cfc_news_history + cfc_news_talk + cfc_news_question
+            cfc_news_application + cfc_news_company + cfc_news_talk + cfc_news_question
         from CusFeatureCount
         where cfc_cus_id = #{cusId}
     </select>
@@ -32,7 +32,7 @@
     <select id="getCusArtTypesBehaviorNums" resultType="java.lang.Integer">
         select
             cfc_news_cope + cfc_news_apple + cfc_news_flash + cfc_news_review + cfc_news_tip + cfc_news_opinion + cfc_news_game +
-            cfc_news_application + cfc_news_company + cfc_news_geography + cfc_news_history + cfc_news_talk + cfc_news_question
+            cfc_news_application + cfc_news_company + cfc_news_talk + cfc_news_question
         from CusFeatureCount
         where cfc_cus_id = #{cusId}
     </select>
@@ -51,8 +51,6 @@
                   cfc_news_game as cfc_news_game,
                   cfc_news_application as cfc_news_application,
                   cfc_news_company as cfc_news_company,
-                  cfc_news_geography as cfc_news_geography,
-                  cfc_news_history as cfc_news_history,
                   cfc_news_talk as cfc_news_talk,
                   cfc_news_question as cfc_news_question
               from CusFeatureCount where cfc_cus_id = #{cusId}) as b
@@ -68,8 +66,6 @@
             POW((cast(a.cfc_news_game as signed) - cast(b.cfc_news_game as signed)), 2) +
             POW((cast(a.cfc_news_application as signed) - cast(b.cfc_news_application as signed)), 2) +
             POW((cast(a.cfc_news_company as signed) - cast(b.cfc_news_company as signed)), 2) +
-            POW((cast(a.cfc_news_geography as signed) - cast(b.cfc_news_geography as signed)), 2) +
-            POW((cast(a.cfc_news_history as signed) - cast(b.cfc_news_history as signed)), 2) +
             POW((cast(a.cfc_news_talk as signed) - cast(b.cfc_news_talk as signed)), 2) +
             POW((cast(a.cfc_news_question as signed) - cast(b.cfc_news_question as signed)), 2)
             )

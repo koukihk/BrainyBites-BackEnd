@@ -114,7 +114,7 @@
         where
             art_id not in (select cbr_art_id from CusBehaviorRecord where cbr_cus_id_from = #{cusId} and cbr_behavior = 2) and
 
-            art_type not in ( 'news_review', 'news_tip', 'news_opinion', 'news_geography', 'news_history' )
+            art_type not in ( 'news_review', 'news_tip', 'news_opinion' )
         order by artscorelist.asl_art_score desc
         limit #{start}, #{pageSize}
     </select>
@@ -125,7 +125,7 @@
         where
             art_id not in (select cbr_art_id from CusBehaviorRecord where cbr_cus_id_from = #{cusId} and cbr_behavior = 2) and
 
-            art_type in ( 'news_review', 'news_tip', 'news_opinion', 'news_geography', 'news_history' )
+            art_type in ( 'news_review', 'news_tip', 'news_opinion' )
         order by artscorelist.asl_art_score desc
         limit #{start}, #{pageSize}
     </select>

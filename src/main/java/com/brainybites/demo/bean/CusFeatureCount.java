@@ -15,8 +15,6 @@ public class CusFeatureCount {
 
     private Integer cfcNewsApplication;
     private Integer cfcNewsCompany;
-    private Integer cfcNewsGeography;
-    private Integer cfcNewsHistory;
     private Integer cfcNewsTalk;
     private Integer cfcNewsQuestion;
 
@@ -100,18 +98,6 @@ public class CusFeatureCount {
     public void setCfcNewsCompany(Integer cfcNewsCompany) {
         this.cfcNewsCompany = cfcNewsCompany;
     }
-
-    public Integer getCfcNewsGeography() {
-        return cfcNewsGeography;
-    }
-
-    public void setCfcNewsGeography(Integer cfcNewsGeography) {
-        this.cfcNewsGeography = cfcNewsGeography;
-    }
-
-    public Integer getCfcNewsHistory() { return cfcNewsHistory; }
-
-    public void setCfcNewsHistory(Integer cfcNewsHistory) { this.cfcNewsHistory = cfcNewsHistory; }
 
     public Integer getCfcNewsTalk() { return cfcNewsTalk; }
 
